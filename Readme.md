@@ -1,6 +1,6 @@
-Taboo-like Online Party Game
-============================
+Quiz Party Game
+===============
 
-This is a online variation of the Taboo party game.
+This is an online variation of the Taboo party game.
 
 The first edition will be in Hebrew.
