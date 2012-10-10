@@ -6,3 +6,4 @@
 6. Store game history
 7. Add more cards
 8. Make mobile friendly
+9. Make Random smarter by not repeating cards.
