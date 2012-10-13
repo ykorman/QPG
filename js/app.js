@@ -138,8 +138,16 @@
 				];
 				
 	document.getElementById("startButton").addEventListener('click', startRound);
+	// click on the word is also good
 	document.getElementById("correctButton").addEventListener('click', correctCard);
+	document.getElementById("cardWord").addEventListener('click', correctCard);
+	// clicking on any of the taboo words is also ok
 	document.getElementById("wrongButton").addEventListener('click', wrongCard);
+	document.getElementById("cardTaboo1").addEventListener('click', wrongCard);
+	document.getElementById("cardTaboo2").addEventListener('click', wrongCard);
+	document.getElementById("cardTaboo3").addEventListener('click', wrongCard);
+	document.getElementById("cardTaboo4").addEventListener('click', wrongCard);
+	
 	document.getElementById("passButton").addEventListener('click', passCard);
 	document.getElementById("resetButton").addEventListener('click', resetGame);
 
