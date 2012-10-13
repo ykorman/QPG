@@ -3,49 +3,83 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>משחק טאבו</title>
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
 	<section id="tabooApp">
-		<div id="gameStats">
-		<ul id="roundStats">
-			<li>סיבוב מספר <span id="roundNumber">0</span></li>
-			<li>זמן <span id="timer">0</span></li>
-		</ul>
-		<br />
-		<ul id="gameScore">
-			<li>ניקוד</li>
-			<ul>
-				<li>קבוצה א <span id="teamAScore">0</li>
-				<li>קבוצה ב <span id="teamBScore">0</li>
-			</ul>
-		</ul>	
+		<h1>משחק טאבו</h1>
+		<div id="gameStats" class="row-fluid" dir="ltr">
+			<div class="span4 offset2">
+				<div class="input-append">
+					<input class="span3" id="roundNumber" size="4" type="text" value="0">
+					<button class="btn" type="button">סיבוב מספר</button>
+				</div>
+			</div>		
+			<div class="span4 offset2">
+				<div class="input-append">
+					<input class="span3" id="timer" size="4" type="text" value="0">
+					<button class="btn" type="button">זמן</button>
+				</div>
+			</div>
 		</div>
-		<div id="gameCard">
-			<dl>
-				<dt>פרה
-				<dd>חלב
-				<dd>חיה
-				<dd>מוו
-				<dd>רפת
-			</dl>
+		<div id="gameScore" class="row-fluid" dir="ltr">
+			<div class="span3 offset2">
+				<div class="input-append">
+					<input class="span3" id="teamAScore" size="4" type="text" value="0">
+					<button class="btn" type="button">קבוצה א</button>
+				</div>
+			</div>
+			<button class="btn span2">ניקוד</button>
+			<div class="span3 offset2">
+				<div class="input-append">
+					<input class="span3" id="teamBScore" size="4" type="text" value="0"></input>
+					<button class="btn" type="button">קבוצה ב</button>
+				</div>
+			</div>
 		</div>
-		<div id="roundControls">
-			<input type="button" class="button" id="correctButton" value="נכון">
-			<input type="button" class="button" id="wrongButton" value="טעות">
-			<input type="button" class="button" id="passButton" value="עבור">
+		<div class="container well" dir="ltr">
+			<div id="gameCard1" class="row-fluid btn-group btn-group-vertical">
+				<div class="span10 offset1">
+					<a id="cardWord" class="btn btn-large btn-primary">פרה</a>
+					<a id="cardTaboo1" class="btn btn-info">חלב</a>
+					<a id="cardTaboo2" class="btn btn-info">חיה</a>
+					<a id="cardTaboo3" class="btn btn-info">מוו</a>
+					<a id="cardTaboo4" class="btn btn-info">רפת</a>
+				</div>
+			</div>
 		</div>
-		<div id="gameControls">
-			<input type="button" class="button" id="startButton" value="התחל סיבוב">
-			<input type="button" class="button" id="resetButton" value="אפס משחק">
+		<div class="container well" dir="ltr">
+			<div id="roundControls" class="row-fluid">
+				<div class="span4">
+					<button class="btn btn-warning btn-large btn-block" id="passButton">עבור</button>
+				</div>
+				<div class="span4">
+					<button class="btn btn-danger btn-large btn-block" id="wrongButton">טעות</button>
+				</div>
+				<div class="span4">
+					<button class="btn btn-success btn-large btn-block" id="correctButton">נכון</button>
+				</div>
+			</div>
 		</div>
-		<div id="debug">
-			<p id="debugP">
+		<div class="container well">
+			<div id="gameControls" class="row-fluid">
+				<div class="span6">
+					<button class="btn btn-inverse btn-large btn-block" id="resetButton">אפס משחק</button>
+				</div>
+				<div class="span6">
+					<button class="btn btn-primary btn-large btn-block" id="startButton">התחל סיבוב</button>
+				</div>		
+			</div>
+		</div>
+		<div id="debug" class="container well" dir="ltr">
+			<p class="muted" id="debugP">
 		</div>
 	</section>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

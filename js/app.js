@@ -14,7 +14,7 @@
 	
 	function updateRound() {
 		roundNumber++;
-		document.getElementById("roundNumber").innerHTML = roundNumber;
+		document.getElementById("roundNumber").value = roundNumber;
 	}
 	
 	function updateRoundTeam() {
@@ -39,16 +39,16 @@
 		if (timerInterval)
 			clearInterval(timerInterval);
 		timeoutCounter = 10;
-		document.getElementById("timer").innerHTML = timeoutCounter;
+		document.getElementById("timer").value = timeoutCounter;
 		timerInterval = setInterval(function(){ timerCount() }, 1000);
 	}
 	
 	function timerCount() {
 		if (timeoutCounter > 0) {
 			timeoutCounter = timeoutCounter - 1;
-			document.getElementById("timer").innerHTML = timeoutCounter;
+			document.getElementById("timer").value = timeoutCounter;
 		} else {
-			document.getElementById("timer").innerHTML = "0";
+			document.getElementById("timer").value = "0";
 			clearInterval(timerInterval);
 			updateRoundTeam();
 			tabooDebug("timer done");
@@ -59,22 +59,27 @@
 			var randomCardId = Math.floor(Math.random() * cards.length);
 			var card = cards[randomCardId];
 			// tabooDebug("random is " + randomCardId);
-			var cardDiv = document.getElementById("gameCard");
-			var cardHtml = "<dl> <dt>" + card.word + "\n";
-			for (var i=0; i < card.taboos.length; i++)
-				cardHtml += "<dd>" + card.taboos[i] + "\n";
-			cardHtml += "</dl>"
-			cardDiv.innerHTML = cardHtml;		
+			// var cardDiv = document.getElementById("gameCard");
+			// var cardHtml = "<dl> <dt>" + card.word + "\n";
+			// for (var i=0; i < card.taboos.length; i++)
+				// cardHtml += "<dd>" + card.taboos[i] + "\n";
+			// cardHtml += "</dl>"
+			// cardDiv.innerHTML = cardHtml;
+			document.getElementById("cardWord").innerHTML = card.word;
+			document.getElementById("cardTaboo1").innerHTML = card.taboos[0];
+			document.getElementById("cardTaboo2").innerHTML = card.taboos[1];
+			document.getElementById("cardTaboo3").innerHTML = card.taboos[2];
+			document.getElementById("cardTaboo4").innerHTML = card.taboos[3];
 	}
 	
 	function correctCard() {
 		if (timeoutCounter == 0) return;
 		if (roundTeam == "TeamA") {
 			teamAScore++;
-			document.getElementById("teamAScore").innerHTML = teamAScore;
+			document.getElementById("teamAScore").value = teamAScore;
 		} else {
 			teamBScore++;
-			document.getElementById("teamBScore").innerHTML = teamBScore;
+			document.getElementById("teamBScore").value = teamBScore;
 		}
 		showCard();
 	}
@@ -84,11 +89,11 @@
 		if (roundTeam == "TeamA") {
 			teamAScore--;
 			if (teamAScore < 0) teamAScore = 0;
-			document.getElementById("teamAScore").innerHTML = teamAScore;
+			document.getElementById("teamAScore").value = teamAScore;
 		} else {
 			teamBScore--;
 			if (teamBScore < 0) teamBScore = 0;
-			document.getElementById("teamBScore").innerHTML = teamBScore;
+			document.getElementById("teamBScore").value = teamBScore;
 		}
 		showCard();
 	}
@@ -110,10 +115,10 @@
 		teamAScore = 0;
 		teamBScore = 0;
 		roundTeam = "TeamB";
-		document.getElementById("teamAScore").innerHTML = teamAScore;
-		document.getElementById("teamBScore").innerHTML = teamBScore;
-		document.getElementById("timer").innerHTML = timeoutCounter;
-		document.getElementById("roundNumber").innerHTML = roundNumber;
+		document.getElementById("teamAScore").value = teamAScore;
+		document.getElementById("teamBScore").value = teamBScore;
+		document.getElementById("timer").value = timeoutCounter;
+		document.getElementById("roundNumber").value = roundNumber;
 	}
 	
 	tabooDebug("script started");
