@@ -14,20 +14,20 @@
 	
 	function updateRound() {
 		roundNumber++;
-		document.getElementById("roundNumber").value = roundNumber;
+		document.getElementById("roundNumber").innerHTML = roundNumber;
 	}
 	
 	function updateRoundTeam() {
 		passCount = 3;
 		if (roundTeam == "TeamA")
 		{
-			document.getElementById("teamAScore").style.color = "black";
-			document.getElementById("teamBScore").style.color = "red";
+			document.getElementById("teamAScoreLabel").style.color = "black";
+			document.getElementById("teamBScoreLabel").style.color = "red";
 			roundTeam = "TeamB";
 		} else
 		{
-			document.getElementById("teamAScore").style.color = "red";
-			document.getElementById("teamBScore").style.color = "black";
+			document.getElementById("teamAScoreLabel").style.color = "red";
+			document.getElementById("teamBScoreLabel").style.color = "black";
 			roundTeam = "TeamA";
 		}
 		tabooDebug("now team: " + roundTeam);
@@ -39,16 +39,16 @@
 		if (timerInterval)
 			clearInterval(timerInterval);
 		timeoutCounter = 10;
-		document.getElementById("timer").value = timeoutCounter;
+		document.getElementById("timer").innerHTML = timeoutCounter;
 		timerInterval = setInterval(function(){ timerCount() }, 1000);
 	}
 	
 	function timerCount() {
 		if (timeoutCounter > 0) {
 			timeoutCounter = timeoutCounter - 1;
-			document.getElementById("timer").value = timeoutCounter;
+			document.getElementById("timer").innerHTML = timeoutCounter;
 		} else {
-			document.getElementById("timer").value = "0";
+			document.getElementById("timer").innerHTML = "0";
 			clearInterval(timerInterval);
 			updateRoundTeam();
 			tabooDebug("timer done");
@@ -76,10 +76,10 @@
 		if (timeoutCounter == 0) return;
 		if (roundTeam == "TeamA") {
 			teamAScore++;
-			document.getElementById("teamAScore").value = teamAScore;
+			document.getElementById("teamAScore").innerHTML = teamAScore;
 		} else {
 			teamBScore++;
-			document.getElementById("teamBScore").value = teamBScore;
+			document.getElementById("teamBScore").innerHTML = teamBScore;
 		}
 		showCard();
 	}
@@ -89,11 +89,11 @@
 		if (roundTeam == "TeamA") {
 			teamAScore--;
 			if (teamAScore < 0) teamAScore = 0;
-			document.getElementById("teamAScore").value = teamAScore;
+			document.getElementById("teamAScore").innerHTML = teamAScore;
 		} else {
 			teamBScore--;
 			if (teamBScore < 0) teamBScore = 0;
-			document.getElementById("teamBScore").value = teamBScore;
+			document.getElementById("teamBScore").innerHTML = teamBScore;
 		}
 		showCard();
 	}
@@ -115,10 +115,10 @@
 		teamAScore = 0;
 		teamBScore = 0;
 		roundTeam = "TeamB";
-		document.getElementById("teamAScore").value = teamAScore;
-		document.getElementById("teamBScore").value = teamBScore;
-		document.getElementById("timer").value = timeoutCounter;
-		document.getElementById("roundNumber").value = roundNumber;
+		document.getElementById("teamAScore").innerHTML = teamAScore;
+		document.getElementById("teamBScore").innerHTML = teamBScore;
+		document.getElementById("timer").innerHTML = timeoutCounter;
+		document.getElementById("roundNumber").innerHTML = roundNumber;
 	}
 	
 	tabooDebug("script started");
@@ -128,7 +128,7 @@
 	var teamAScore = 0;
 	var teamBScore = 0;
 	var roundTeam = "TeamB";
-	document.getElementById("teamAScore").style.color = "red";
+	document.getElementById("teamAScoreLabel").style.color = "red";
 	var passCount = 3;
 	var cards = [ 
 					{word: "פרה", taboos: ["חיה","מוו","חלב","רפת"]},

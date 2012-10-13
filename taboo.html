@@ -10,45 +10,28 @@
 </head>
 <body>
 	<section id="tabooApp">
-		<h1>משחק טאבו</h1>
-		<div id="gameStats" class="row-fluid" dir="ltr">
-			<div class="span4 offset2">
-				<div class="input-append">
-					<input class="span3" id="roundNumber" size="4" type="text" value="0">
-					<button class="btn" type="button">סיבוב מספר</button>
-				</div>
-			</div>		
-			<div class="span4 offset2">
-				<div class="input-append">
-					<input class="span3" id="timer" size="4" type="text" value="0">
-					<button class="btn" type="button">זמן</button>
-				</div>
+		<h1 class="hidden-phone" style="text-align: center;">משחק טאבו</h1>
+		<div class="container well well-small" style="text-align: center;">
+			<div id="gameStats" class="input-append">
+				<button class="btn" id="roundNumberLabel">סיבוב מספר</button>
+				<button class="btn" id="roundNumber"></button>
+				<button class="btn" id="timerLabel">זמן</button>
+				<button class="btn" id="timer"></button>
+			</div>
+			<div id="gameScore" class="input-append">
+				<button class="btn" id="teamAScoreLabel">קבוצה א</button>
+				<button class="btn" id="teamAScore"></button>
+				<button class="btn" id="teamBScoreLabel">קבוצה ב</button>
+				<button class="btn" id="teamBScore"></button>
 			</div>
 		</div>
-		<div id="gameScore" class="row-fluid" dir="ltr">
-			<div class="span3 offset2">
-				<div class="input-append">
-					<input class="span3" id="teamAScore" size="4" type="text" value="0">
-					<button class="btn" type="button">קבוצה א</button>
-				</div>
-			</div>
-			<button class="btn span2">ניקוד</button>
-			<div class="span3 offset2">
-				<div class="input-append">
-					<input class="span3" id="teamBScore" size="4" type="text" value="0"></input>
-					<button class="btn" type="button">קבוצה ב</button>
-				</div>
-			</div>
-		</div>
-		<div class="container well" dir="ltr">
-			<div id="gameCard1" class="row-fluid btn-group btn-group-vertical">
-				<div class="span10 offset1">
-					<a id="cardWord" class="btn btn-large btn-primary">פרה</a>
-					<a id="cardTaboo1" class="btn btn-info">חלב</a>
-					<a id="cardTaboo2" class="btn btn-info">חיה</a>
-					<a id="cardTaboo3" class="btn btn-info">מוו</a>
-					<a id="cardTaboo4" class="btn btn-info">רפת</a>
-				</div>
+		<div id="gameCard1" class="container well" style="text-align: center;" dir="ltr">
+			<div class="btn-group btn-group-vertical">
+				<a id="cardWord" style="width:200px;" class="btn btn-large btn-primary">פרה</a>
+				<a id="cardTaboo1" style="width:200px;" class="btn btn-info">חלב</a>
+				<a id="cardTaboo2" style="width:200px;" class="btn btn-info">חיה</a>
+				<a id="cardTaboo3" style="width:200px;" class="btn btn-info">מוו</a>
+				<a id="cardTaboo4" style="width:200px;" class="btn btn-info">רפת</a>
 			</div>
 		</div>
 		<div class="container well" dir="ltr">
