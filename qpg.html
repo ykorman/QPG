@@ -8,25 +8,8 @@
     <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
     <title>משחק טאבו</title>
 </head>
-<body>
-    <div data-role="page" id="menu">
-
-        <div data-role="header">
-            <h1>תפריט</h1>
-        </div><!-- /header -->
-
-        <div data-role="content">    
-            <p>שלום עולם</p>
-            <a href="#round">התחילו משחק</a>
-        </div><!-- /content -->
-        
-        <div data-role="footer">
-        </div><!-- /footer -->
-
-    </div><!-- /page -->
-    
-        <div data-role="page" id="round">
-
+<body>    
+    <div data-role="page" id="round">
         <div data-role="header">
             <button id="resetButton" data-icon="refresh">אפס משחק</button>
             <h1>משחק</h1>
@@ -54,10 +37,9 @@
                 <a id="cardTaboo3" data-role="button" data-mini="true">מוו</a>
                 <a id="cardTaboo4" data-role="button" data-mini="true">רפת</a>
             </div>
-            <div id="debug" dir="ltr">
-                <p id="debugP"></p>
+            <div id="debug" dir="ltr" >
+                <h6 id="debugP">Null</h6>
             </div>
-            <a href="#menu">חזרה לתפריט</a>
         </div><!-- /content -->
             
         <div data-role="footer" class="ui-bar">
@@ -65,9 +47,7 @@
             <button id="passButton" data-icon="refresh">עבור</button>
             <button id="wrongButton" data-icon="delete">טעות</button>
         </div><!-- /footer -->
-
-    </div><!-- /page -->
-    
+    </div><!-- /page -->    
     <script src="js/app.js"></script>
 </body>
 </html>
