@@ -22,8 +22,14 @@
                 <a id="timerLabel" data-role="button" data-mini="true">זמן</a>
                 <a id="roundNumber" data-role="button" data-mini="true">0</a>
                 <a id="roundNumberLabel" data-role="button" data-mini="true">סיבוב מספר</a>
-
             </div>
+			<div data-role="controlgroup" class="ui-grid-solo">
+				<div data-role="fieldcontain" dir="ltr">
+					<label for="timerSlider" class="ui-hidden-accessible">זמן</label>
+					<input type="range" name="timerSlider" id="timerSlider" style="display:none;" data-inline="false" 
+										data-highlight="true" data-mini="true" min="0" max="10" />
+				</div>
+			</div>
             <div data-role="controlgroup" data-type="horizontal">
                 <a id="teamBScore" data-role="button" data-mini="true">0</a>
                 <a id="teamBScoreLabel" data-role="button" data-mini="true">קבוצה ב</a>

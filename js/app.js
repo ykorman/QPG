@@ -59,14 +59,22 @@
         }
         tabooDebug("now team: " + roundTeam);
     }
+	
+	function updateSlider(value) {
+		tabooDebug(value);
+		$("#timerSlider").page();
+		$("#timerSlider").val(value);
+		$("#timerSlider").slider("refresh");
+	}
     
     function initTimer() {
         if (timeoutCounter > 0)
             updateRoundTeam();
         if (timerInterval)
             clearInterval(timerInterval);
-        timeoutCounter = 10;
+        timeoutCounter = timeout;
         $("#timer").changeButtonText(timeoutCounter);
+		updateSlider(timeout - timeoutCounter);
         timerInterval = setInterval(function(){ timerCount() }, 1000);
     }
     
@@ -80,6 +88,7 @@
             updateRoundTeam();
             tabooDebug("timer done");
         }
+		updateSlider(timeout - timeoutCounter);
     }
     
     function showCard() {
@@ -128,7 +137,7 @@
     
     function resetGame() {
         // todo
-        timeoutCounter = 10;
+        timeoutCounter = timeout;
         if (timerInterval)
             clearInterval(timerInterval);
         roundNumber = 0;
@@ -144,7 +153,8 @@
     
     tabooDebug("script started");
     var timerInterval = null;
-    var timeoutCounter = 10;
+    var timeout = 10;
+	var timeoutCounter = timeout;
     var roundNumber = 0;
     var teamAScore = 0;
     var teamBScore = 0;
